@@ -1,5 +1,4 @@
-package br.com.williamb.dotolist.entity;
-
+package br.com.williamb.dotolist.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,42 +9,38 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
 @Entity
 @Table(name = "todos")
-
 public class Todo {
 
-    @Getter
+    public Todo() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
     @Setter
     @NotBlank
+    @NotBlank(message = "não deve estar em branco")
     private String name;
 
-    @Getter
     @Setter
     @NotBlank
+    @NotBlank(message = "não deve estar em branco")
     private String description;
 
-
-    @Getter
     @Setter
-    private boolean carriedOut; //Realizado
+    private boolean carriedOut; // Realizado
 
-    @Getter
     @Setter
-    private String priority; //prioridade
+    private Integer priority; // Prioridade
 
-
-    public Todo(String name, String description, boolean carriedOut, String priority) {
+    public Todo(String name, String description, boolean carriedOut, Integer priority) {
         this.name = name;
         this.description = description;
         this.carriedOut = carriedOut;
         this.priority = priority;
     }
-
-
 }

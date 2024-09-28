@@ -1,10 +1,10 @@
-package br.com.williamb.dotolist.repository;
+package br.com.williamb.dotolist.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
-import br.com.williamb.dotolist.entity.Todo;
+import br.com.williamb.dotolist.entities.Todo;
 
 @Repository
 public interface TodoRepository extends JpaRepository<Todo, Long>{
